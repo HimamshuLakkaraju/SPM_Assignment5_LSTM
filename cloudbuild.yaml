@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'spm-assignment5-lstm', '--image', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm', '--region', 'us-central1', '--platform', 'managed','--port','8080']
+images:
+- gcr.io/spm-assignment5-lstm/spm-assignment5-lstm
