@@ -1,5 +1,5 @@
 steps:
-# Build the container image
+# Build the container image 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm', '.']
 # Push the container image to Container Registry
