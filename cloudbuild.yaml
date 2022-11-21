@@ -8,6 +8,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'spm-assignment5-lstm', '--image', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm', '--region', 'us-central1', '--platform', 'managed','--port','8080']
+  args: ['run', 'deploy', 'spm-assignment5-lstm', '--image', 'gcr.io/spm-assignment5-lstm/spm-assignment5-lstm', '--region', 'us-central1', '--platform', 'managed','--port','80']
 images:
 - gcr.io/spm-assignment5-lstm/spm-assignment5-lstm
