@@ -105,9 +105,9 @@ def forecast():
     # fig2 = m_proph.plot(m_forecast)
 
     fig2 = m_proph.plot_components(m_forecast)
-    plt.savefig(PROPHET_GENERATED_URL)
+    plt.savefig(LOCAL_IMAGE_PATH + PROPHET_GENERATED)
     fig3 = m_proph.plot(m_forecast)
-    plt.savefig(PROPHET_GENERATED_URL2)
+    plt.savefig(LOCAL_IMAGE_PATH + PROPHET_GENERATED2)
 
     array = df.to_numpy()
     x = np.array([time.mktime(i[0].timetuple()) for i in array])
