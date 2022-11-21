@@ -263,6 +263,11 @@ def forecast():
     new_blob = bucket.blob(LSTM_GENERATED_IMAGE_NAME)
     new_blob.upload_from_filename(filename=LOCAL_IMAGE_PATH + LSTM_GENERATED_IMAGE_NAME)
 
+    new_blob = bucket.blob(PROPHET_GENERATED)
+    new_blob.upload_from_filename(filename=LOCAL_IMAGE_PATH + PROPHET_GENERATED)
+    new_blob = bucket.blob(PROPHET_GENERATED2)
+    new_blob.upload_from_filename(filename=LOCAL_IMAGE_PATH + PROPHET_GENERATED2)
+
     # Construct the response
     json_response = {
         "model_loss_image_url": MODEL_LOSS_URL,
